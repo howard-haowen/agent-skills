@@ -6,7 +6,7 @@ This repository is the source of truth for global AI agent skills shared across 
 
 ## 2. Directory conventions
 
-- Each direct child folder is usually one skill.
+- Each direct child folder is a skill; list folders in this repo to determine which skills are installed.
 - Each skill folder should contain a `SKILL.md` file.
 - Custom skills must use folder names starting with `haowen-`.
 - Public/upstream skills may keep their original names.
@@ -27,6 +27,7 @@ This repository is the source of truth for global AI agent skills shared across 
 - Do not casually edit upstream-installed skills.
 - If behavior needs customization, prefer creating a `haowen-*` wrapper or companion skill.
 - Review diffs after syncing upstream skills.
+- Whenever new skills are installed, update `README.md` to reflect the current installed skills.
 - Do not overwrite local custom skills during sync.
 
 ## 5. `npx skills` commands
@@ -65,6 +66,7 @@ Before finishing any change:
 
 - Confirm every changed skill has a valid `SKILL.md`.
 - Confirm custom skill folders start with `haowen-`.
+- If skills were added or removed, list direct child folders and update `README.md` accordingly.
 - Run available validation/listing commands if present, such as `npx skills ls -g --json`.
 - Show changed files with `git status --short`.
 - Mention whether `~/.agents/.skill-lock.json` changed.
