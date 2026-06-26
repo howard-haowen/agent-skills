@@ -6,8 +6,8 @@ This repository is the source of truth for global AI agent skills shared across 
 
 ## 2. Directory conventions
 
-- Each direct child folder is a skill; list folders in this repo to determine which skills are installed.
-- Each skill folder should contain a `SKILL.md` file.
+- Each direct child directory or directory symlink is a skill; list entries in this repo or run `npx skills ls -g --json` to determine which skills are installed.
+- Each skill should resolve to a `SKILL.md` file. Use symlink-aware checks such as `find -L . -maxdepth 2 -name SKILL.md` when validating.
 - Custom skills must use folder names starting with `haowen-`.
 - Public/upstream skills may keep their original names.
 - The global lock file is `~/.agents/.skill-lock.json`, outside this repo root.
@@ -51,6 +51,12 @@ cat ~/.agents/.skill-lock.json          # inspect the global lock file
 ```
 
 Avoid project-scoped assumptions such as `./skills-lock.json` unless such a file actually exists in this repo.
+
+The `quarkdown` skill is installed as a symlink to the skill bundled with the Homebrew `quarkdown` package. If it needs to be recreated, use the global skills directory path:
+
+```bash
+ln -s "$(quarkdown doctor get agent-skill)" ~/.agents/skills/quarkdown
+```
 
 ## 6. Git workflow
 
