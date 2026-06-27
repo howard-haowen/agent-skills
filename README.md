@@ -13,6 +13,7 @@
 | `find-skills` | 公開/上游 | 協助搜尋、評估與安裝 open agent skills 生態系中的可用 skills。 | Node.js、`npm`、`npx skills`、skills.sh |
 | `frontend-slides` | 公開/上游 | 從零建立或轉換 PowerPoint 成動畫豐富的單檔 HTML 簡報，強調固定 16:9 舞台、視覺風格探索與瀏覽器播放。 | HTML、CSS、JavaScript、瀏覽器、PowerPoint 檔案（轉換時） |
 | `git-commit` | 公開/上游 | 分析 git diff、智慧 staging，並產生 Conventional Commits 格式的 commit message。 | `git` |
+| `haowen-html-to-pdf` | 自製 | 使用 headless Chromium 將本機 HTML 檔案或 URL 轉成 PDF，支援一般頁面 print-to-PDF 與 HTML slide deck 多頁輸出。 | Node.js、`npm`、Puppeteer、pdf-lib |
 | `haowen-openlibrary-search` | 自製 | 使用 Open Library API 搜尋作品與作者，並取得作品、作者與封面資訊。 | `http`（httpie）、`jq`、Open Library Search API、Open Library Covers API |
 | `haowen-webpage-to-markdown` | 自製 | 擷取網頁內容並儲存為以頁面標題命名的 Markdown 檔案。 | `markdownload`、`curl` |
 | `here-now` | 公開/上游 | 發佈網站或檔案到 here.now，並使用 Drive 儲存私人雲端檔案。 | `curl`、`file`、`jq`、here.now API、`publish.sh`、`drive.sh` |
@@ -35,6 +36,6 @@
 - 公開/上游 skills 可使用 `npx skills update -g` 同步更新。
 - 全域同步可能會更新 `~/.agents/skills` 底下的 skill folders，也可能更新全域 lock file：`~/.agents/.skill-lock.json`。
 - 自製 skills 請使用 `haowen-` 前綴。
-- 若新增或移除 skills，請同步更新本 README 的 Skills 摘要表。目前 `npx skills ls -g --json` 會列出 23 個 global skills。
+- 若新增或移除 skills，請同步更新本 README 的 Skills 摘要表。目前 `npx skills ls -g --json` 會列出 24 個 global skills。
 - 驗證 skill 清單時請使用 symlink-aware 指令，例如：`find -L . -maxdepth 2 -name SKILL.md -print | sort`；無法解析到 `SKILL.md` 的 symlink 不算有效 skill。
 - 同步或編輯後請檢查 `git diff` 與 `git status --short`，並留意 `~/.agents/.skill-lock.json` 是否有變更。

@@ -1,0 +1,14 @@
+{
+  "name": "haowen-html-to-pdf-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Support files for the haowen-html-to-pdf agent skill.",
+  "scripts": {
+    "convert": "node scripts/convert.mjs"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.11.1"
+  }
+}
