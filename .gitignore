@@ -1,2 +1,16 @@
+# Node.js artifacts (root and all skill folders)
 node_modules/
+**/node_modules/
+.npm/
+**/.npm/
+.pnpm-store/
+**/.pnpm-store/
+.yarn/
+**/.yarn/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# macOS
 .DS_Store

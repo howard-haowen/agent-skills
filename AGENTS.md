@@ -64,7 +64,8 @@ ln -s "$(quarkdown doctor get agent-skill)" ~/.agents/skills/quarkdown
 - After running `npx skills update -g`, review `git diff` inside `~/.agents/skills`.
 - Also check whether `~/.agents/.skill-lock.json` changed.
 - Because `~/.agents/.skill-lock.json` is outside the repo root, mention it explicitly in commit or sync notes if it is not tracked.
-- Do not commit secrets, local caches, `node_modules/`, or large generated artifacts.
+- Never use git to track Node.js artifacts such as `node_modules/`; this applies to the repository root and every skill folder.
+- Do not commit secrets, local caches, or large generated artifacts.
 
 ## 7. Validation checklist
 
